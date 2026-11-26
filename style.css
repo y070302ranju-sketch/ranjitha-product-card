@@ -1,0 +1,299 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  --card-bg: rgba(30, 41, 59, 0.75);
+  --card-border: rgba(148, 163, 184, 0.2);
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+  --accent: #10b981;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.25rem;
+}
+
+.pricing-section {
+  max-width: 1120px;
+  width: 100%;
+}
+
+/* Header & Toggle */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #818cf8;
+  margin-bottom: 0.6rem;
+}
+
+.pricing-header h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 0.75rem;
+}
+
+.pricing-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.75rem;
+}
+
+.billing-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+}
+
+.billing-toggle .label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.billing-toggle .label.active {
+  color: var(--text-main);
+}
+
+.discount-pill {
+  background: rgba(16, 185, 129, 0.18);
+  color: var(--accent);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  margin-left: 0.3rem;
+}
+
+/* Custom Toggle Switch */
+.switch {
+  position: relative;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background-color: #334155;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.switch input:checked + .slider {
+  background-color: var(--primary);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* Cards Grid */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Card Styling + Transitions & Transform Hover Effects */
+.card {
+  position: relative;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 1.25rem;
+  padding: 2.25rem 1.85rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease,
+              border-color 0.35s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(129, 140, 248, 0.6);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+}
+
+.card.featured {
+  border: 2px solid var(--primary);
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.16) 0%, rgba(30, 41, 59, 0.85) 100%);
+  transform: translateY(-6px);
+}
+
+.card.featured:hover {
+  transform: translateY(-16px) scale(1.03);
+  box-shadow: 0 28px 56px rgba(99, 102, 241, 0.3);
+}
+
+/* Card Badge Ribbons */
+.ribbon {
+  position: absolute;
+  top: -14px;
+  right: 24px;
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.45);
+}
+
+.ribbon-secondary {
+  background: linear-gradient(90deg, #059669, #10b981);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+}
+
+/* Typography & Pricing */
+.card-header h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.35rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  min-height: 2.5rem;
+}
+
+.price-box {
+  margin: 1.5rem 0 0.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+}
+
+.currency {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+.amount {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.amount.updating {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.period {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.billing-note {
+  font-size: 0.82rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+/* Features List */
+.features {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.features li {
+  position: relative;
+  padding-left: 1.65rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--card-border);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #94a3b8;
+}

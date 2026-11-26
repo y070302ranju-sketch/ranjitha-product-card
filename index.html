@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CloudFlow SaaS — Pricing Plans</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="pricing-section">
+    <header class="pricing-header">
+      <span class="eyebrow">Simple, Transparent Pricing</span>
+      <h1>Choose the plan that scales with you</h1>
+      <p>Start free and upgrade anytime. Switch to yearly billing to save 20%.</p>
+
+      <!-- JS Toggle Switch for Billing Cycle -->
+      <div class="billing-toggle">
+        <span class="label active" id="monthly-label">Monthly</span>
+        <label class="switch" aria-label="Toggle Monthly or Yearly billing">
+          <input type="checkbox" id="billing-checkbox" />
+          <span class="slider"></span>
+        </label>
+        <span class="label" id="yearly-label">
+          Yearly <span class="discount-pill">Save 20%</span>
+        </span>
+      </div>
+    </header>
+
+    <!-- Pricing Cards Grid -->
+    <section class="cards-container">
+      <!-- Card 1: Starter -->
+      <article class="card">
+        <div class="card-header">
+          <h2>Starter</h2>
+          <p class="subtitle">Essential tools for solo learners & hobbyists</p>
+        </div>
+        <div class="price-box">
+          <span class="currency">₹</span>
+          <span class="amount" data-monthly="499" data-yearly="399">499</span>
+          <span class="period">/ month</span>
+        </div>
+        <p class="billing-note">Billed monthly</p>
+        <ul class="features">
+          <li>Up to 5 active projects</li>
+          <li>10 GB cloud storage</li>
+          <li>Basic analytics dashboard</li>
+          <li>Community forum support</li>
+        </ul>
+        <button class="btn btn-outline">Get Started</button>
+      </article>
+
+      <!-- Card 2: Pro (Featured with Popular Ribbon) -->
+      <article class="card featured">
+        <div class="ribbon">Most Popular</div>
+        <div class="card-header">
+          <h2>Pro</h2>
+          <p class="subtitle">Everything growing teams need to ship faster</p>
+        </div>
+        <div class="price-box">
+          <span class="currency">₹</span>
+          <span class="amount" data-monthly="1,299" data-yearly="999">1,299</span>
+          <span class="period">/ month</span>
+        </div>
+        <p class="billing-note">Billed monthly</p>
+        <ul class="features">
+          <li>Unlimited active projects</li>
+          <li>100 GB high-speed storage</li>
+          <li>Real-time team collaboration</li>
+          <li>Custom domain & SSL</li>
+          <li>Priority 24/7 chat support</li>
+        </ul>
+        <button class="btn btn-primary">Start 14-Day Free Trial</button>
+      </article>
+
+      <!-- Card 3: Enterprise (Best Value Ribbon) -->
+      <article class="card">
+        <div class="ribbon ribbon-secondary">Best Value</div>
+        <div class="card-header">
+          <h2>Enterprise</h2>
+          <p class="subtitle">Advanced security & control for organizations</p>
+        </div>
+        <div class="price-box">
+          <span class="currency">₹</span>
+          <span class="amount" data-monthly="2,999" data-yearly="2,399">2,999</span>
+          <span class="period">/ month</span>
+        </div>
+        <p class="billing-note">Billed monthly</p>
+        <ul class="features">
+          <li>Unlimited projects & members</li>
+          <li>1 TB encrypted storage</li>
+          <li>Role-based access & SSO</li>
+          <li>Dedicated account manager</li>
+          <li>99.99% uptime SLA guarantee</li>
+        </ul>
+        <button class="btn btn-outline">Contact Sales</button>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
